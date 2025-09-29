@@ -1,13 +1,33 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-  //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-  // to see how IntelliJ IDEA suggests fixing it.
-  IO.println(String.format("Hello and welcome!"));
+void main(){
+import Scanner;
 
-  for (int i = 1; i <= 5; i++) {
-    //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-    // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-    IO.println("i = " + i);
-  }
+class ShippingCalculator {
+
+    public static void main(String[] args) {
+        var scanner = new Scanner(System.in);
+
+        System.out.print("Enter the price of the item: $");
+
+        double itemPrice = scanner.nextDouble();
+
+        double shippingCost;
+
+        if (itemPrice >= 100) {
+            shippingCost = 0;
+        } else {
+            shippingCost = itemPrice * 0.02;
+        }
+
+        double totalPrice = itemPrice + shippingCost;
+
+        System.out.printf("Shipping cost: $%.2f%n", shippingCost);
+        System.out.printf("Total price: $%.2f%n", totalPrice);
+
+        // Close the scanner to release system resource
+        scanner.close();
+    }
 }
+
+
